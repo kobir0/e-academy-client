@@ -1,7 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
+import { AuthContext } from '../../Utilites/UserContext';
 
 const Navbar = () => {
+    const { user, logOut } = useContext(AuthContext)
+    const handleLogout = () => {
+        logOut()
+            .then(res => {
+                const user = res.user;
+            })
+            .catch(err => {
+                console.error(err)
+            })
+    }
+
     return (
         <div>
             <div className="navbar bg-blue-500 shadow-sm">
@@ -39,12 +51,16 @@ const Navbar = () => {
                     <div className="dropdown dropdown-end">
                         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                             <div className="w-10 rounded-full">
-                                <img src="https://365psd.com/images/previews/85b/psd-universal-blue-web-user-icon-53242.jpg" alt='' />
+
+                                {user?.uid ? <img src={user.photoURL} alt='' /> : <img src="https://365psd.com/images/previews/85b/psd-universal-blue-web-user-icon-53242.jpg" alt='' />}
+
                             </div>
                         </label>
                         <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
 
-                            <li><NavLink to='/login'> Login</NavLink></li>
+
+                            {user?.uid ? <li><button onClick={handleLogout}>Log Out</button></li> : <li><NavLink to='/login'> Log In</NavLink></li>}
+
                             <li><NavLink to='/register'> Register</NavLink></li>
 
                         </ul>
