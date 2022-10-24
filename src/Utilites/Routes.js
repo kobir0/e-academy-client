@@ -5,6 +5,7 @@ import FQA from "../Component/FAQ/FQA";
 import Home from "../Component/Home/Home";
 import Login from "../Component/Login/Login";
 import Register from "../Component/Register/Register";
+
 import Main from "./Main";
 
 

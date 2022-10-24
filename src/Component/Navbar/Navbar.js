@@ -52,7 +52,7 @@ const Navbar = () => {
                         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                             <div className="w-10 rounded-full">
 
-                                {user?.uid ? <img src={user.photoURL} alt='' /> : <img src="https://365psd.com/images/previews/85b/psd-universal-blue-web-user-icon-53242.jpg" alt='' />}
+                                {user?.photoURL ? <img src={user.photoURL} alt='' /> : <img src="https://365psd.com/images/previews/85b/psd-universal-blue-web-user-icon-53242.jpg" alt='' />}
 
                             </div>
                         </label>

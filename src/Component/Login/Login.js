@@ -70,7 +70,7 @@ const Login = () => {
                                 <input name="password" type="password" placeholder="password" className="input input-bordered" required />
                                 <label className="label">
 
-                                    <>New User ? <NavLink to={'../signup'} className=" text-blue-600 text-lg label-text-alt link link-hover"><h1 >Sign Up Now !!</h1></NavLink></>
+                                    <>New User ? <NavLink to={'../register'} className=" text-blue-600 text-lg label-text-alt link link-hover"><h1 >Sign Up Now !!</h1></NavLink></>
                                 </label>
                             </div>
                             <div className="form-control mt-6 border-none">
