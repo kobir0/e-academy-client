@@ -1,14 +1,17 @@
 import React, { createContext, useEffect, useState } from 'react';
-import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth'
-import app from '../Firebase/Firebase.config';
+import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import app from '../Firebase/Firebase.init.config';
+
+
 
 export const AuthContext = createContext();
+
 const UserContext = ({ children }) => {
 
-    const [user, setUser] = useState({});
-    const [loading, setLoading] = useState(true)
-
     const auth = getAuth(app);
+
+    const [user, setUser] = useState({});
+    const [loading, setLoading] = useState(true);
 
     const createUser = (email, password) => {
         return createUserWithEmailAndPassword(auth, email, password);
@@ -39,11 +42,12 @@ const UserContext = ({ children }) => {
 
     }, [])
 
-
     return (
-        <AuthContext.Provider value={AuthInfo}>
-            {children}
-        </AuthContext.Provider>
+        <div>
+            <AuthContext.Provider value={AuthInfo}>
+                {children}
+            </AuthContext.Provider>
+        </div>
     );
 };
 
