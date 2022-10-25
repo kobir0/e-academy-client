@@ -24,7 +24,7 @@ const Login = () => {
 
         logIn(email, password)
             .then(result => {
-                const user = result.user;
+                const resuser = result.user;
                 form.reset();
             })
             .catch(error => {
@@ -35,8 +35,8 @@ const Login = () => {
     const handleGooglePopUp = () => {
         signInWithPopGoogle()
             .then(res => {
-                const user = res.user;
-                console.log(user)
+                const resuser = res.user;
+                console.log(resuser)
             })
             .catch(err => {
                 console.error(err)

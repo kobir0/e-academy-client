@@ -1,6 +1,9 @@
-.bg-img{
-    
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg-img {}
+
 .App {
     text-align: center;
 }
