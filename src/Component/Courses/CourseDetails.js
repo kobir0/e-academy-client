@@ -15,7 +15,7 @@ const CourseDetails = () => {
                     <h1 className='text-xl font-bold text-violet-700'> Price: {data.price}</h1>
                     <h1 className='text-xl font-bold'> Rating: {data.rating}</h1>
                     <div className="card-actions justify-end">
-                        <button className="btn btn-primary">Get Premium</button>
+                        <button className="btn btn-primary shadow-2xl">Get Premium</button>
                     </div>
                 </div>
             </div>
