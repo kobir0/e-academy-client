@@ -1,0 +1,15 @@
+.height {
+    height: 500px;
+
+}
+
+.flexible {
+    display: flex;
+    flex-direction: column;
+}
+
+.grid-Container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+
+}
