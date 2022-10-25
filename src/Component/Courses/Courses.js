@@ -1,19 +1,18 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLoaderData } from 'react-router-dom';
 import Category from './Category';
 import Course from './Course';
 import './category.css'
 
 const Courses = () => {
+    const category = useLoaderData();
+
     return (
 
         <div className='grid-Container'>
 
-            <Category className=''></Category>
-
-
-
-            <Course className=''></Course>
+            <Category category={category}></Category>
+            <Outlet></Outlet>
 
         </div >
 

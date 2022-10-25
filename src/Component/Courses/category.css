@@ -1,5 +1,5 @@
 .height {
-    height: 500px;
+    height: 600px;
 
 }
 
@@ -12,4 +12,8 @@
     display: grid;
     grid-template-columns: 1fr 2fr;
 
+}
+
+.cardHeight {
+    height: 250px;
 }

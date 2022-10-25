@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Blog from "../Component/Blog/Blog";
+import Course from "../Component/Courses/Course";
 import Courses from "../Component/Courses/Courses";
 import FQA from "../Component/FAQ/FQA";
 import Home from "../Component/Home/Home";
@@ -31,7 +32,16 @@ const router = createBrowserRouter(
                 element: <Register></Register>
             }, {
                 path: 'courses',
+                loader: () => fetch('https://e-academy-server.vercel.app/category'),
                 element: <Courses></Courses>
+                , children: [
+                    {
+                        path: '/courses/:name',
+                        loader: ({ params }) => fetch(`https://e-academy-server.vercel.app/category/${params.name}`),
+                        element: <Course></Course>
+                    },
+
+                ]
             }, {
                 path: 'blog',
                 element: <Blog></Blog>
