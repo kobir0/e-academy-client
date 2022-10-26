@@ -82,7 +82,7 @@ const Navbar = () => {
                             <ul tabIndex={0} className=" menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
 
 
-                                {user?.uid ? <li><button onClick={handleLogout}>Log Out</button></li> : <li><NavLink to='/login'> Log In</NavLink></li>}
+                                {user?.email ? <li><button onClick={handleLogout}>Log Out</button></li> : <li><NavLink to='/login'> Log In</NavLink></li>}
 
                                 <li><NavLink to='/register'> Register</NavLink></li>
 

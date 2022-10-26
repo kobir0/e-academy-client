@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { NavLink, useLoaderData } from 'react-router-dom';
 import './category.css'
 
 
@@ -15,7 +15,7 @@ const CourseDetails = () => {
                     <h1 className='text-xl font-bold'> Price: <span className=' text-violet-700'> $ {data.price}</span></h1>
                     <h1 className='text-xl font-bold'> Rating: <span className=' text-violet-700'>{data.rating}</span></h1>
                     <div className="card-actions justify-end">
-                        <button className="btn btn-primary shadow-2xl">Get Premium</button>
+                        <NavLink to={`../CheackOut/${data.uid}`}><button className="btn btn-primary shadow-2xl">Get Premium</button></NavLink>
                     </div>
                 </div>
             </div>

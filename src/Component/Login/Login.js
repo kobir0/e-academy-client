@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMailBulk } from '@fortawesome/free-solid-svg-icons';
@@ -13,6 +13,7 @@ import '../Courses/category.css'
 
 const Login = () => {
     const [Error, setError] = useState('')
+
 
     const { logIn, signInWithPopGoogle, signInWithPopGitHub } = useContext(AuthContext);
 
@@ -30,6 +31,7 @@ const Login = () => {
             .then(result => {
                 const resuser = result.user;
                 form.reset();
+
             })
             .catch(error => {
                 setError(error.message)

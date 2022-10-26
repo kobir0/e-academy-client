@@ -5,7 +5,7 @@ import { AuthContext } from '../../Utilites/UserContext';
 
 const Register = () => {
 
-    const { createUser, updateProfileInfo } = useContext(AuthContext);
+    const { createUser, updateProfileInfo, logOut } = useContext(AuthContext);
 
 
     const handleSubmit = (event) => {
@@ -26,6 +26,8 @@ const Register = () => {
                 handleUpdateprofile(name, url);
                 console.log("signed", user)
 
+
+
             })
             .catch((error => {
                 console.log(error)
@@ -35,6 +37,12 @@ const Register = () => {
 
 
     }
+
+    logOut()
+        .then(() => { })
+        .catch(err => {
+            console.error(err)
+        })
 
 
     const handleUpdateprofile = (name, url) => {

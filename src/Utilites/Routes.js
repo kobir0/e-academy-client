@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Blog from "../Component/Blog/Blog";
+import CheackOut from "../Component/CheackOut/CheackOut";
 import Course from "../Component/Courses/Course";
 import CourseDetails from "../Component/Courses/CourseDetails";
 import CourseLanding from "../Component/Courses/CourseLanding";
@@ -11,6 +12,7 @@ import Register from "../Component/Register/Register";
 import ErrorPage from "./ErrorPage";
 
 import Main from "./Main";
+
 
 
 const router = createBrowserRouter(
@@ -28,7 +30,7 @@ const router = createBrowserRouter(
                 element: <Home></Home>
             },
             {
-                path: 'login',
+                path: '/login',
                 element: <Login></Login>
             },
             {
@@ -63,6 +65,11 @@ const router = createBrowserRouter(
             {
                 path: 'faq',
                 element: <FQA></FQA>
+            },
+            {
+                path: 'courses/CheackOut/:id',
+                loader: ({ params }) => fetch(`https://e-academy-server.vercel.app/category/SingleItem/${params.id}`),
+                element: <CheackOut></CheackOut>
             }
         ]
     }]
