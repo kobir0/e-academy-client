@@ -41,8 +41,8 @@ const Navbar = () => {
                 </div >
 
 
-                <div className='navbar-center'>   <NavLink to='home' className="btn btn-ghost ml-5 border-black ">
-                    <h1 className='normal-case text-slate-50 text-xl'>E-Academy
+                <div className='navbar-center'>   <NavLink to='home' className="btn btn-ghost btn-sm border-black ">
+                    <h1 className='normal-case text-slate-50 text-lg'>E-Academy
                     </h1>
                 </NavLink></div>
 
@@ -53,7 +53,7 @@ const Navbar = () => {
 
 
 
-                    <div className='m-2'>
+                    <div className='m-1 sm:m-0'>
                         <label className="swap swap-rotate">
 
 
@@ -68,29 +68,30 @@ const Navbar = () => {
                         </label>
                     </div>
 
-                    <div className='m-2'>{user?.uid ? <NavLink to='/register'><button className="btn btn-sm">Sign Up</button>
+                    <div className='m-1'>{user?.uid ? <NavLink to='/register'><button className="btn btn-sm">Sign Up</button>
                     </NavLink> : <NavLink to='/login'> <button className="btn btn-sm">Sign In</button></NavLink>}</div>
 
 
                     <div className="tooltip tooltip-left tooltip-warning" data-tip={user?.displayName ? user.displayName : ''}>
-                        < > <div className="dropdown dropdown-end">
+                        < >
+                            <div className="dropdown dropdown-end">
 
-                            <label tabIndex={0} className="btn mr-4 btn-ghost btn-circle avatar">
-                                <div className="w-10 rounded-full">
+                                <label tabIndex={0} className="btn m-1 sm:m-1 btn-ghost btn-circle avatar">
+                                    <div className="w-10 rounded-full">
 
-                                    {user?.photoURL ? <img src={user.photoURL} alt='' /> : <img src="https://365psd.com/images/previews/85b/psd-universal-blue-web-user-icon-53242.jpg" alt='' />}
+                                        {user?.photoURL ? <img src={user.photoURL} alt='' /> : <img src="https://365psd.com/images/previews/85b/psd-universal-blue-web-user-icon-53242.jpg" alt='' />}
 
-                                </div>
-                            </label>
-                            <ul tabIndex={0} className=" menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-
-
-
-                                <li><button onClick={handleLogout}>Log Out</button></li>
+                                    </div>
+                                </label>
+                                <ul tabIndex={0} className=" menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
 
 
-                            </ul>
-                        </div>
+
+                                    <li><button onClick={handleLogout}>Log Out</button></li>
+
+
+                                </ul>
+                            </div>
                         </>
                     </div>
 
