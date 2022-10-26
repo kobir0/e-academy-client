@@ -5,6 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMailBulk } from '@fortawesome/free-solid-svg-icons';
 import { AuthContext } from '../../Utilites/UserContext';
 import '../Courses/category.css'
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -31,6 +33,7 @@ const Login = () => {
             .then(result => {
                 const resuser = result.user;
                 form.reset();
+                toast('You have Logged In SuccessFully !!')
 
             })
             .catch(error => {
@@ -46,6 +49,7 @@ const Login = () => {
             .then(res => {
                 const resuser = res.user;
                 console.log(resuser)
+                toast('You have Logged In SuccessFully !!')
             })
             .catch(error => {
                 console.error(error)
@@ -59,6 +63,7 @@ const Login = () => {
             .then(res => {
                 const resuser = res.user;
                 console.log(resuser)
+                toast('You have Logged In SuccessFully !!')
             })
             .catch(error => {
                 setError(error.message)

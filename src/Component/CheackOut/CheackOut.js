@@ -1,10 +1,20 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const CheackOut = () => {
     const data = useLoaderData()
     console.log(data);
+    const notify = () => toast('Congratulations !!',
+        {
+            icon: '👏',
+            style: {
+                borderRadius: '10px',
+            },
+            autoClose: 1500, position: 'top-center'
+        });
     return (
         <div>
             <div className=' flex justify-center '>
@@ -14,7 +24,7 @@ const CheackOut = () => {
                         <div>
                             <h1 className="text-2xl font-bold">Selected Course: <span className='text-violet-600'>{data.courseTitle}</span></h1>
                             <p className="py-6 text-xl">Price:$ {data.price}</p>
-                            <button className="btn btn-primary">Add To Shipment</button>
+                            <button onClick={notify} className="btn btn-primary">Add To Shipment</button>
                         </div>
                     </div>
                 </div>
@@ -37,7 +47,7 @@ const CheackOut = () => {
 
                                 </div>
 
-                                <div className='text-center my-4'><button className="btn btn-primary ">Buy This Premium</button></div>
+                                <div className='text-center my-4'><button onClick={notify} className="btn btn-primary ">Buy This Premium</button></div>
                             </div>
                         </div>
                     </div>
@@ -55,7 +65,7 @@ const CheackOut = () => {
 
                                 </div>
 
-                                <div className='text-center my-4'><button className="btn btn-primary ">Buy This Premium</button></div>
+                                <div className='text-center my-4'><button onClick={notify} className="btn btn-primary ">Buy This Premium</button></div>
                             </div>
                         </div>
                     </div>

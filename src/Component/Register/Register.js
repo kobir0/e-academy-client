@@ -1,11 +1,14 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { AuthContext } from '../../Utilites/UserContext';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Register = () => {
-
+    const [Error, setError] = useState('')
     const { createUser, updateProfileInfo, logOut } = useContext(AuthContext);
+    const notify = () => toast("Wow so easy!");
 
 
     const handleSubmit = (event) => {
@@ -25,15 +28,27 @@ const Register = () => {
                 const user = userCredential.user;
                 handleUpdateprofile(name, url);
                 console.log("signed", user)
+                toast.success('Your Account has been created succesfully !!',
+                    {
+                        icon: '👏',
+                        style: {
+                            borderRadius: '10px',
+                        },
+                        autoClose: 1200, position: 'top-center'
+                    });
+
+                from.reset();
 
 
 
             })
             .catch((error => {
+                setError(error.message)
                 console.log(error)
             })
 
             )
+
 
 
     }
@@ -95,6 +110,7 @@ const Register = () => {
 
                                     <>Already have an account ? <NavLink to={'../login'} className=" text-teal-600 text-lg label-text-alt link link-hover"><h1 >Log In Now !!</h1></NavLink></>
                                 </label>
+                                <p className='text-red-600'>{Error}</p>
                             </div>
                             <div className="form-control mt-6 border-none">
                                 <button className="btn btn-primary">Register</button>
