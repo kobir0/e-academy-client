@@ -23,6 +23,11 @@
     height: 100%;
 }
 
+.google {
+    height: 30px;
+    width: 30px;
+}
+
 @media only screen and (max-width: 1100px) {
     .card-img {
         width: 100%;

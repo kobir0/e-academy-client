@@ -4,6 +4,10 @@ import { AuthContext } from '../../Utilites/UserContext';
 
 
 const Register = () => {
+
+    const { createUser, updateProfileInfo } = useContext(AuthContext);
+
+
     const handleSubmit = (event) => {
         event.preventDefault();
         const from = event.target;
@@ -19,6 +23,7 @@ const Register = () => {
             .then((userCredential) => {
 
                 const user = userCredential.user;
+                handleUpdateprofile(name, url);
                 console.log("signed", user)
 
             })
@@ -28,9 +33,22 @@ const Register = () => {
 
             )
 
+
     }
 
-    const { createUser } = useContext(AuthContext);
+
+    const handleUpdateprofile = (name, url) => {
+        const profile = { displayName: name, photoURL: url }
+        updateProfileInfo(profile)
+            .then(() => { })
+            .catch(err => {
+                console.error(err)
+            })
+
+
+    }
+
+
 
     return (
         <div>

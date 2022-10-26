@@ -1,9 +1,10 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMailBulk } from '@fortawesome/free-solid-svg-icons';
 import { AuthContext } from '../../Utilites/UserContext';
+import '../Courses/category.css'
 
 
 
@@ -11,10 +12,13 @@ import { AuthContext } from '../../Utilites/UserContext';
 
 
 const Login = () => {
+    const [Error, setError] = useState('')
 
-    const { logIn, signInWithPopGoogle } = useContext(AuthContext);
+    const { logIn, signInWithPopGoogle, signInWithPopGitHub } = useContext(AuthContext);
 
     const navigate = useNavigate();
+
+
     const handleSubmit = (event) => {
         event.preventDefault();
         const form = event.target;
@@ -28,20 +32,37 @@ const Login = () => {
                 form.reset();
             })
             .catch(error => {
-                console.log(error);
+                setError(error.message)
+                console.error(error)
             })
-        navigate('/home');
+
     }
+
+
     const handleGooglePopUp = () => {
         signInWithPopGoogle()
             .then(res => {
                 const resuser = res.user;
                 console.log(resuser)
             })
-            .catch(err => {
-                console.error(err)
+            .catch(error => {
+                console.error(error)
+                setError(error.message)
             })
-        navigate('/home');
+
+    }
+
+    const handleGitHubPopUp = () => {
+        signInWithPopGitHub()
+            .then(res => {
+                const resuser = res.user;
+                console.log(resuser)
+            })
+            .catch(error => {
+                setError(error.message)
+                console.error(error)
+            })
+
     }
 
 
@@ -72,12 +93,14 @@ const Login = () => {
 
                                     <>New User ? <NavLink to={'../register'} className=" text-blue-600 text-lg label-text-alt link link-hover"><h1 >Sign Up Now !!</h1></NavLink></>
                                 </label>
+                                <p className='text-red-600'>{Error}</p>
                             </div>
                             <div className="form-control mt-6 border-none">
                                 <button className="btn btn-primary">Login</button>
                             </div>
-                            <div>
-                                <button className='' onClick={handleGooglePopUp}> <FontAwesomeIcon icon={faMailBulk} />  Googgle</button>
+                            <div className='flex justify-center'>
+                                <button className='flex  m-2' onClick={handleGooglePopUp}><img className='google' src='https://freesvg.org/img/1534129544.png' alt=''></img> <>Google</></button>
+                                <button className='flex m-2' onClick={handleGitHubPopUp}><img className='google rounded-full ' src='https://cdn-icons-png.flaticon.com/512/25/25231.png' alt=''></img> <>GitHub</></button>
 
                             </div>
                         </div>
