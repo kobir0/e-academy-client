@@ -53,7 +53,7 @@ const Navbar = () => {
 
 
 
-                    <div className='mr-4'>
+                    <div className='m-2'>
                         <label className="swap swap-rotate">
 
 
@@ -67,6 +67,9 @@ const Navbar = () => {
 
                         </label>
                     </div>
+
+                    <div className='m-2'>{user?.uid ? <NavLink to='/register'><button className="btn btn-sm">Sign Up</button>
+                    </NavLink> : <NavLink to='/login'> <button className="btn btn-sm">Sign In</button></NavLink>}</div>
 
 
                     <div className="tooltip tooltip-left tooltip-warning" data-tip={user?.displayName ? user.displayName : ''}>
@@ -82,9 +85,9 @@ const Navbar = () => {
                             <ul tabIndex={0} className=" menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
 
 
-                                {user?.uid ? <li><button onClick={handleLogout}>Log Out</button></li> : <li><NavLink to='/login'> Log In</NavLink></li>}
 
-                                <li><NavLink to='/register'> Register</NavLink></li>
+                                <li><button onClick={handleLogout}>Log Out</button></li>
+
 
                             </ul>
                         </div>

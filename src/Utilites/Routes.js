@@ -12,6 +12,7 @@ import Register from "../Component/Register/Register";
 import ErrorPage from "./ErrorPage";
 
 import Main from "./Main";
+import PrivateRoute from "./Private";
 
 
 
@@ -69,7 +70,7 @@ const router = createBrowserRouter(
             {
                 path: 'courses/CheackOut/:id',
                 loader: ({ params }) => fetch(`https://e-academy-server.vercel.app/category/SingleItem/${params.id}`),
-                element: <CheackOut></CheackOut>
+                element: <PrivateRoute><CheackOut></CheackOut></PrivateRoute>
             }
         ]
     }]

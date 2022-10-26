@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const CheackOut = () => {
     const data = useLoaderData()
-    console.log(data);
+
     const notify = () => toast('Congratulations !!',
         {
             icon: '👏',

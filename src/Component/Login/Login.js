@@ -20,6 +20,8 @@ const Login = () => {
     const { logIn, signInWithPopGoogle, signInWithPopGitHub } = useContext(AuthContext);
 
     const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
 
 
     const handleSubmit = (event) => {
@@ -29,11 +31,14 @@ const Login = () => {
         const email = form.email.value;
         console.log(password, email);
 
+
         logIn(email, password)
             .then(result => {
                 const resuser = result.user;
                 form.reset();
                 toast('You have Logged In SuccessFully !!')
+                navigate(from, { replace: true })
+
 
             })
             .catch(error => {
@@ -50,6 +55,7 @@ const Login = () => {
                 const resuser = res.user;
                 console.log(resuser)
                 toast('You have Logged In SuccessFully !!')
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 console.error(error)
@@ -64,6 +70,7 @@ const Login = () => {
                 const resuser = res.user;
                 console.log(resuser)
                 toast('You have Logged In SuccessFully !!')
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 setError(error.message)
