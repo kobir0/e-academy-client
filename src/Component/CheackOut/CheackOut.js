@@ -19,31 +19,11 @@ const CheackOut = () => {
             autoClose: 1000, position: 'top-center'
         });
     return (
-        <div>
-            <div className=' flex justify-center '>
-                <div className="hero w-3/6 rounded-2xl m-5  bg-base-200">
-                    <div className="hero-content flex-row ">
-                        <div>
+        <div className=''>
 
-
-                            <div > <h1 className="text-2xl font-bold">Selected Course: <span className='text-violet-600'>{data.courseTitle}</span></h1>
-                                <p className="py-6 text-xl">Price:$ <span className='text-violet-500'>{data.price}</span></p>
-
-
-                            </div>
-
-                            <div className='flex justify-between'>
-
-                                <button onClick={notify} className="btn btn-primary my-2">Add To Shipment</button>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <h1 className='text-center text-violet-600 font-bold text-3xl'>Our Premium Plans</h1>
 
-            <div>
+            <div className=''>
                 <div className='grid grid-cols-2'>
                     <div className="hero w-5/6  rounded-2xl m-5 bg-slate-600">
                         <div className="hero-content flex-row ">

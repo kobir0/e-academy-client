@@ -30,13 +30,9 @@ const CourseDetails = () => {
 
 
                     <h1 className='text-xl font-bold'> Rating: <span className=' text-violet-700'>{data.rating}</span></h1>
-
-
-                    <div className="card-actions justify-end">
-                        <NavLink to={`../CheackOut/${data.uid}`}><button className="btn btn-primary shadow-2xl">Get Premium</button></NavLink>
-                    </div>
                 </div>
             </div>
+            <div className="div flex justify-center m-4"> <NavLink to={`../CheackOut/${data.uid}`}><button className="btn btn-primary shadow-2xl">Get Premium</button></NavLink></div>
         </div>
     );
 };
