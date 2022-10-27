@@ -13,7 +13,7 @@ const CheackOut = () => {
             style: {
                 borderRadius: '10px',
             },
-            autoClose: 1500, position: 'top-center'
+            autoClose: 1000, position: 'top-center'
         });
     return (
         <div>

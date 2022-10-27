@@ -54,7 +54,14 @@ const Login = () => {
             .then(res => {
                 const resuser = res.user;
                 console.log(resuser)
-                toast('You have Logged In SuccessFully !!')
+                toast('You have Logged In SuccessFully !!',
+                    {
+                        icon: '👏',
+                        style: {
+                            borderRadius: '10px',
+                        },
+                        autoClose: 1200, position: 'top-center'
+                    })
                 navigate(from, { replace: true })
             })
             .catch(error => {

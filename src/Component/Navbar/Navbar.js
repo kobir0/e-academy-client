@@ -41,14 +41,14 @@ const Navbar = () => {
                 </div >
 
 
-                <div className='navbar-center'>   <NavLink to='home' className="btn btn-ghost btn-sm border-black ">
-                    <h1 className='normal-case text-slate-50 text-lg'>E-Academy
+                <div className='navbar-center'>   <NavLink to='home' className="btn p-none btn-ghost btn-sm border-black ">
+                    <h1 className='normal-case text-slate-50  text-lg'>E-Academy
                     </h1>
                 </NavLink></div>
 
 
 
-                <div className="navbar-end">
+                <div className="navbar-end ">
 
 
 
@@ -68,8 +68,8 @@ const Navbar = () => {
                         </label>
                     </div>
 
-                    <div className='m-1'>{user?.uid ? <NavLink to='/register'><button className="btn btn-sm">Sign Up</button>
-                    </NavLink> : <NavLink to='/login'> <button className="btn btn-sm">Sign In</button></NavLink>}</div>
+                    <div className='m-1'>{user?.uid ? <NavLink to='/register'><button className="btn btn-circle "><p className='text-xs'>Sign Up</p></button>
+                    </NavLink> : <NavLink to='/login'> <button className="btn btn-circle">Sign In</button></NavLink>}</div>
 
 
                     <div className="tooltip tooltip-left tooltip-warning" data-tip={user?.displayName ? user.displayName : ''}>
