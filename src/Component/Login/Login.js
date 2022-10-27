@@ -1,8 +1,5 @@
 import React, { useContext, useState } from 'react';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMailBulk } from '@fortawesome/free-solid-svg-icons';
 import { AuthContext } from '../../Utilites/UserContext';
 import '../Courses/category.css'
 import { toast } from 'react-toastify';
@@ -34,7 +31,7 @@ const Login = () => {
 
         logIn(email, password)
             .then(result => {
-                const resuser = result.user;
+
                 form.reset();
                 toast('You have Logged In SuccessFully !!')
                 navigate(from, { replace: true })

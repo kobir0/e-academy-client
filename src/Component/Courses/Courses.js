@@ -1,7 +1,6 @@
 import React from 'react';
 import { Outlet, useLoaderData } from 'react-router-dom';
 import Category from './Category';
-import Course from './Course';
 import './category.css'
 
 const Courses = () => {

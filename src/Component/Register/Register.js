@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const Register = () => {
     const [Error, setError] = useState('')
     const { createUser, updateProfileInfo, logOut } = useContext(AuthContext);
-    const notify = () => toast("Wow so easy!");
+
 
 
     const handleSubmit = (event) => {

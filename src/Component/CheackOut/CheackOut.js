@@ -2,10 +2,13 @@ import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Pdf from "react-to-pdf";
+import './cheackout.css'
 
-
+const ref = React.createRef();
 const CheackOut = () => {
     const data = useLoaderData()
+
 
     const notify = () => toast('Congratulations !!',
         {
@@ -20,16 +23,22 @@ const CheackOut = () => {
             <div className=' flex justify-center '>
                 <div className="hero w-3/6 rounded-2xl m-5  bg-base-200">
                     <div className="hero-content flex-row ">
-
                         <div>
-                            <h1 className="text-2xl font-bold">Selected Course: <span className='text-violet-600'>{data.courseTitle}</span></h1>
-                            <p className="py-6 text-xl">Price:$ {data.price}</p>
+                            <div className='flex justify-end'>
+                                <Pdf targetRef={ref} filename="code-example.pdf">
+                                    {({ toPdf }) => <button className='btn btn-circle btn-outline' onClick={toPdf}><img src='https://cdn.pixabay.com/photo/2016/12/18/13/45/download-1915753_1280.png' alt='Download The Pdf'></img></button>}
+                                </Pdf>
+                            </div>
+
+                            <div ref={ref}> <h1 className="text-2xl font-bold">Selected Course: <span className='text-violet-600'>{data.courseTitle}</span></h1>
+                                <p className="py-6 text-xl"><span className='text-violet-500'>Price:$ {data.price}</span></p>
+                                <p>{data.description}</p>
+
+                            </div>
+
                             <div className='flex justify-between'>
-                                <button onClick={notify} className="btn btn-primary">Add To Shipment</button>
 
-
-                                <button className='btn btn-circle btn-outline'> <img src='https://cdn.pixabay.com/photo/2016/12/18/13/45/download-1915753_1280.png' alt='Download The Pdf'></img></button>
-
+                                <button onClick={notify} className="btn btn-primary my-2">Add To Shipment</button>
 
                             </div>
                         </div>
