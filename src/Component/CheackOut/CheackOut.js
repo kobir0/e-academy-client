@@ -24,7 +24,14 @@ const CheackOut = () => {
                         <div>
                             <h1 className="text-2xl font-bold">Selected Course: <span className='text-violet-600'>{data.courseTitle}</span></h1>
                             <p className="py-6 text-xl">Price:$ {data.price}</p>
-                            <button onClick={notify} className="btn btn-primary">Add To Shipment</button>
+                            <div className='flex justify-between'>
+                                <button onClick={notify} className="btn btn-primary">Add To Shipment</button>
+
+
+                                <button className='btn btn-circle btn-outline'> <img src='https://cdn.pixabay.com/photo/2016/12/18/13/45/download-1915753_1280.png' alt='Download The Pdf'></img></button>
+
+
+                            </div>
                         </div>
                     </div>
                 </div>
