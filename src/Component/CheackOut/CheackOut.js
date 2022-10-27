@@ -25,7 +25,7 @@ const CheackOut = () => {
                     <div className="hero-content flex-row ">
                         <div>
                             <div className='flex justify-end'>
-                                <Pdf targetRef={ref} filename="code-example.pdf">
+                                <Pdf targetRef={ref} filename="course.pdf">
                                     {({ toPdf }) => <button className='btn btn-circle btn-outline' onClick={toPdf}><img src='https://cdn.pixabay.com/photo/2016/12/18/13/45/download-1915753_1280.png' alt='Download The Pdf'></img></button>}
                                 </Pdf>
                             </div>
