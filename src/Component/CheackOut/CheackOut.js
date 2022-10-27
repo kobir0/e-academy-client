@@ -31,7 +31,7 @@ const CheackOut = () => {
                             </div>
 
                             <div ref={ref}> <h1 className="text-2xl font-bold">Selected Course: <span className='text-violet-600'>{data.courseTitle}</span></h1>
-                                <p className="py-6 text-xl"><span className='text-violet-500'>Price:$ {data.price}</span></p>
+                                <p className="py-6 text-xl">Price:$ <span className='text-violet-500'>{data.price}</span></p>
                                 <p>{data.description}</p>
 
                             </div>
