@@ -1,21 +1,20 @@
 Project Name: " E Academy "
-Live Link: https://e-academy-bd492.web.app 
+Live Link: " https://e-academy-bd492.web.app "
 
- => Features About My Project Website <=
- 
- ◉My website is about explore courses and buy courses
+=> Features About My Project Website <=
 
- ◉It has 6 courses category
+◉My website is about explore courses and buy courses
 
- ◉For Each course category you can buy different courses
+◉It has 6 courses category
 
- ◉In details course you can see details about the course such as title,price,rating,description,premium clickable button
+◉For Each course category you can buy different courses
 
- ◉For premium button it will take you another page ,There you can see you selected course and our premium plans
+◉In details course you can see details about the course such as title,price,rating,description,premium clickable button
 
- ◉Website has two sec one is blog for reading blogs another is Frequently Ask Ques for Ouestions And Answer
+◉For premium button it will take you another page ,There you can see you selected course and our premium plans
 
- ◉It has a private cheack out ,If you are not an registered user you can't explore it,After logging in You can explore
+◉Website has two sec one is blog for reading blogs another is Frequently Ask Ques for Ouestions And Answer
 
- ◉You can login by Goggle And GitHub account
+◉It has a private cheack out ,If you are not an registered user you can't explore it,After logging in You can explore
 
+◉You can login by Goggle And GitHub account
